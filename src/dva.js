@@ -3,14 +3,13 @@ import {createLogger} from 'redux-logger';
 // import createLoading from 'dva-loading';
 import immer from 'dva-immer';
 
-console.log('immer', immer)
 let app;
 let store = {};
 let dispatch;
 
 
 function createApp(opt) {
-  opt.onAction = [createLogger()];
+  // opt.onAction = [createLogger()];
   app = create(opt);
   // app.use(createLoading({}));
   app.use(immer());

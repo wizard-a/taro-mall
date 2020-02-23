@@ -1,4 +1,573 @@
-.index {
-  flex-direction: column;
+
+.search {
+  height: 88px;
   width: 100%;
+  padding: 0 30px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.search .icon {
+  line-height: 59px;
+}
+
+.search .input {
+  width: 690px;
+  height: 56px;
+  background: #ededed;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search .txt {
+  height: 42px;
+  line-height: 42px;
+  color: #666;
+  padding-left: 10px;
+  font-size: 30px;
+}
+
+/** banner **/
+.banner {
+  width: 750px;
+  height: 417px;
+}
+
+.banner .img {
+  width: 100%;
+  height: 417px;
+  background-size: cover;
+}
+
+/** menu **/
+
+.m-menu {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 0px;
+  padding-top: 25px;
+}
+
+.m-menu .item {
+  width: 150px;
+  height: 126px;
+}
+
+.m-menu .img {
+  display: block;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  background-size: cover;
+}
+
+.m-menu .txt {
+  display: block;
+  font-size: 24px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1;
+  color: #333;
+}
+
+/** 优惠券 **/
+
+.a-section {
+  width: 750px;
+  height: auto;
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  margin-top: 20px;
+}
+
+.a-section .h {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 130px;
+}
+
+.a-section .h .txt {
+  padding-right: 30px;
+  background-size: 16.656px 27px;
+  display: inline-block;
+  height: 36px;
+  font-size: 33px;
+  line-height: 36px;
+}
+
+
+.a-coupon {
+  width: 750px;
+  height: auto;
+  overflow: hidden;
+}
+
+.a-coupon .b .item {
+  position: relative;
+  height: 200px;
+  width: 700px;
+  background: linear-gradient(to right, #cfa568, #e3bf79);
+  margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 30px;
+}
+
+.a-coupon .b .tag {
+  height: 32px;
+  background: #a48143;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: absolute;
+  left: 20px;
+  color: #fff;
+  top: 20px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 32px;
+}
+
+.a-coupon .b .content {
+  margin-top: 24px;
+  margin-left: 40px;
+  display: flex;
+  margin-right: 40px;
+  flex-direction: row;
+}
+
+.a-coupon .b .content .left {
+  flex: 1;
+}
+
+.a-coupon .b .discount {
+  font-size: 50px;
+  color: #b4282d;
+}
+
+.a-coupon .b .min {
+  color: #fff;
+}
+
+.a-coupon .b .content .right {
+  width: 400px;
+}
+
+.a-coupon .b .name {
+  font-size: 44px;
+  color: #fff;
+  // margin-bottom: 14px;
+}
+
+.a-coupon .b .desc {
+  font-size: 24px;
+  color: #fff;
+}
+
+.a-coupon .b .time {
+  font-size: 24px;
+  color: #fff;
+  line-height: 30px;
+}
+
+/** 团购专区 **/
+
+.a-groupon {
+  width: 750px;
+  height: auto;
+  overflow: hidden;
+}
+
+.a-groupon .b .item {
+  border-top: 1px solid #d9d9d9;
+  margin: 0 20px;
+  height: 244px;
+  width: 710px;
+  padding: 5px 0;
+}
+
+.a-groupon .b .img {
+  margin-top: 12px;
+  margin-right: 12px;
+  float: left;
+  width: 220px;
+  height: 220px;
+  background-size: cover;
+}
+
+.a-groupon .b .right {
+  float: left;
+  height: 244px;
+  width: 476px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.a-groupon .b .text {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  height: 244px;
+  width: 476px;
+}
+
+.a-groupon .b .name {
+  float: left;
+  display: block;
+  color: #333;
+  line-height: 50px;
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+.a-groupon .b .expireTag {
+  background: #e3bf79;
+  color: #fff;
+}
+
+.a-groupon .b .desc {
+  width: 476px;
+  display: block;
+  color: #999;
+  line-height: 50px;
+  font-size: 25px;
+}
+
+.a-groupon .b .price {
+  width: 476px;
+  display: flex;
+  color: #ab956d;
+  line-height: 50px;
+  font-size: 33px;
+}
+
+.a-groupon .b .counterPrice {
+  text-decoration: line-through;
+  font-size: 28px;
+  color: #999;
+}
+
+.a-groupon .b .retailPrice {
+  margin-left: 30px;
+  font-size: 28px;
+  color: #a78845;
+}
+
+/** 品牌供应商 **/
+
+.a-brand .b {
+  width: 750px;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.a-brand .wrap {
+  position: relative;
+}
+
+.a-brand .img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.a-brand .mt {
+  position: absolute;
+  z-index: 2;
+  padding: 27px 31px;
+  left: 0;
+  top: 0;
+}
+
+.a-brand .mt .brand {
+  display: block;
+  font-size: 33px;
+  height: 43px;
+  color: #fff;
+}
+
+.a-brand .mt .price, .a-brand .mt .unit {
+  font-size: 25px;
+  color: #fff;
+}
+
+.a-brand .item-1 {
+  float: left;
+  width: 375px;
+  height: 252px;
+  overflow: hidden;
+  border-top: 1px solid #fff;
+  margin-left: 1px;
+}
+
+.a-brand .item-1:nth-child(2n+1) {
+  margin-left: 0;
+  width: 374px;
+}
+
+.a-brand .item-1 .img {
+  width: 375px;
+  height: 253px;
+}
+
+/** 新品 **/
+
+.a-new .b {
+  width: 750px;
+  height: auto;
+  overflow: hidden;
+  padding: 0 31px 45px 31px;
+}
+
+.a-new .b .item {
+  float: left;
+  width: 302px;
+  margin-top: 10px;
+  margin-left: 21px;
+  margin-right: 21px;
+}
+
+.a-new .b .item-b {
+  margin-left: 42px;
+}
+
+.a-new .b .img {
+  width: 302px;
+  height: 302px;
+  background-size: cover;
+}
+
+.a-new .b .name {
+  text-align: center;
+  display: block;
+  width: 302px;
+  height: 38px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  font-size: 30px;
+  color: #333;
+}
+
+.a-new .b .price {
+  display: block;
+  text-align: center;
+  line-height: 30px;
+  font-size: 30px;
+  color: #ab956d;
+}
+
+/** 人气推荐 **/
+
+
+.a-popular {
+  width: 750px;
+  height: auto;
+  overflow: hidden;
+}
+
+.a-popular .b .item {
+  border-top: 1px solid #d9d9d9;
+  margin: 0 20px;
+  height: 264px;
+  width: 710px;
+}
+
+.a-popular .b .img {
+  margin-top: 12px;
+  margin-right: 12px;
+  float: left;
+  width: 240px;
+  height: 240px;
+  background-size: cover;
+}
+
+.a-popular .b .right {
+  float: left;
+  height: 264px;
+  width: 456px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.a-popular .b .text {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  height: 264px;
+  width: 456px;
+}
+
+.a-popular .b .name {
+  width: 456px;
+  display: block;
+  color: #333;
+  line-height: 50px;
+  font-size: 30px;
+}
+
+.a-popular .b .desc {
+  width: 456px;
+  display: block;
+  color: #999;
+  line-height: 50px;
+  font-size: 25px;
+}
+
+.a-popular .b .price {
+  width: 456px;
+  display: block;
+  color: #ab956d;
+  line-height: 50px;
+  font-size: 33px;
+}
+
+/** 专题 **/
+
+
+.a-topic .b {
+  height: 533px;
+  width: 750px;
+  padding: 0 0 48px 0;
+}
+
+.a-topic .b .list {
+  height: 533px;
+  width: 750px;
+  white-space: nowrap;
+}
+
+.a-topic .b .item {
+  display: inline-block;
+  height: 533px;
+  width: 680.5px;
+  margin-left: 30px;
+  overflow: hidden;
+}
+
+.a-topic .b .item:last-child {
+  margin-right: 30px;
+}
+
+.a-topic .b .img {
+  height: 387.5px;
+  width: 680.5px;
+  margin-bottom: 30px;
+  background-size: cover;
+}
+
+.a-topic .b .np {
+  height: 35px;
+  margin-bottom: 13.5px;
+  color: #333;
+  font-size: 30px;
+}
+
+.a-topic .b .np .price {
+  margin-left: 20.8px;
+  color: #ab956d;
+}
+
+.a-topic .b .desc {
+  display: block;
+  height: 30px;
+  color: #999;
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/** 底部好商品 **/
+
+
+.good-grid {
+  width: 750px;
+  height: auto;
+  overflow: hidden;
+}
+
+.good-grid .h {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 130px;
+  font-size: 33px;
+  color: #333;
+}
+
+.good-grid .b {
+  width: 750px;
+  padding: 0 6.25px;
+  height: auto;
+  overflow: hidden;
+}
+
+.good-grid .b .item {
+  float: left;
+  background: #fff;
+  width: 365px;
+  margin-bottom: 6.25px;
+  height: 452px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.good-grid .b .item .a {
+  height: 452px;
+  width: 100%;
+}
+
+.good-grid .b .item-b {
+  margin-left: 6.25px;
+}
+
+.good-grid .item .img {
+  margin-top: 20px;
+  width: 302px;
+  height: 302px;
+  background-size: cover;
+}
+
+.good-grid .item .name {
+  display: block;
+  width: 365.625px;
+  padding: 0 20px;
+  overflow: hidden;
+  height: 38px;
+  margin: 11.5px 0 22px 0;
+  text-align: center;
+  font-size: 30px;
+  color: #333;
+}
+
+.good-grid .item .price {
+  display: block;
+  width: 365.625px;
+  height: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: #ab956d;
+}
+
+.good-grid .t {
+  height: 100px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

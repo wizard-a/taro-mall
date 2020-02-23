@@ -1,28 +1,20 @@
-import delay from '../utils/delay';
+import {getIndex} from '../services/index';
 
 export default {
   namespace: 'home',
   state: {
-    list: [],
-    counter: {
-      num: 0,
-    }
+    data: {},
   },
   reducers: {
-    add: (state, {payload}) => {
-      state.counter.num ++;
+    save: (state, {payload}) => {
+      state.data = payload;
     },
-
-    dec: (state, {payload}) => {
-      state.counter.num --;
-    }
-
   },
   effects: {
-    *asyncAdd(_, {all, call, put}) {
-      yield call(delay, 2000);//增加延迟测试效果
-
-      yield put({type: 'add'});
-    },
+    *getIndex(_, {call, put}) {
+      const res = yield call(getIndex);
+      console.log('--home--', res);
+      yield put({type: 'save', payload: res});
+    }
   }
 };

@@ -1,5 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
+import 'taro-ui/dist/style/index.scss';
 import dva from './dva';
 import models from './models';
 
@@ -35,6 +36,7 @@ class App extends Component {
       'pages/catalog/catalog',
       'pages/cart/cart',
       'pages/user/user',
+      'pages/search/search'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -75,7 +77,12 @@ class App extends Component {
       pages: [
         'pages/demo/index'
       ],
-    }]
+    }],
+    "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 10000
+    },
+    "debug": true,
   }
 
   componentDidShow () {}

@@ -1,0 +1,33 @@
+.container {
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+/*  #ifdef weapp  */
+view, image, text, navigator {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+view, text {
+  // font-family: PingFangSC-Light, helvetica, 'Heiti SC';
+  font-size: 29px;
+  color: #333;
+}
+/*  #endif  */
+
+
+/*  #ifdef h5  */
+div, img, span, navigator {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+div, span {
+  // font-family: PingFangSC-Light, helvetica, 'Heiti SC';
+  font-size: 29px;
+  color: #333;
+}
+/*  #endif  */

@@ -50,7 +50,8 @@
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "regenerator-runtime": "0.11.1"
+    "regenerator-runtime": "0.11.1",
+    "taro-ui": "^2.2.4"
   },
   "devDependencies": {
     "@tarojs/mini-runner": "2.0.4",

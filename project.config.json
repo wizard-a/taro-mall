@@ -4,7 +4,7 @@
 	"description": "严选案例",
 	"appid": "wx5c8bb197f30c7c25",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": false,
 		"postcss": false,
 		"minified": false
