@@ -32,11 +32,11 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index',
+      'pages/search/search',
       'pages/catalog/catalog',
+      'pages/index/index',
       'pages/cart/cart',
       'pages/user/user',
-      'pages/search/search'
     ],
     window: {
       backgroundTextStyle: 'light',

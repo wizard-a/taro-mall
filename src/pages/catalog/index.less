@@ -1,0 +1,161 @@
+page {
+  height: 100%;
+}
+
+.container {
+  background: #f9f9f9;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  height: 88px;
+  width: 100%;
+  padding: 0 30px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.search .input {
+  width: 690px;
+  height: 56px;
+  background: #ededed;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search .van-icon-search {
+  line-height: 56px;
+}
+
+.search .txt {
+  height: 42px;
+  line-height: 42px;
+  color: #666;
+  padding-left: 10px;
+  font-size: 30px;
+}
+
+.catalog {
+  flex: 1;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  border-top: 1px solid #fafafa;
+}
+
+.catalog .nav {
+  width: 162px;
+  height: 100%;
+}
+
+.catalog .nav .item {
+  text-align: center;
+  line-height: 90px;
+  width: 162px;
+  height: 90px;
+  color: #333;
+  font-size: 28px;
+  border-left: 6px solid #fff;
+}
+
+.catalog .nav .item.active {
+  color: #ab956d;
+  font-size: 36px;
+  border-left: 6px solid #ab956d;
+}
+
+.catalog .cate {
+  border-left: 1px solid #fafafa;
+  flex: 1;
+  height: 100%;
+  padding: 0 30px 0 30px;
+}
+
+.banner {
+  display: block;
+  height: 222px;
+  width: 100%;
+  position: relative;
+}
+
+.banner .image {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  border-radius: 4px;
+  height: 192px;
+  width: 100%;
+  background-size: cover;
+}
+
+.banner .txt {
+  position: absolute;
+  top: 30px;
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+  left: 0;
+  height: 192px;
+  line-height: 192px;
+  width: 100%;
+}
+
+.catalog .hd {
+  height: 108px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catalog .hd .txt {
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+  padding: 0 10px;
+  width: auto;
+}
+
+.catalog .hd .line {
+  width: 40px;
+  height: 1px;
+  background: #d9d9d9;
+}
+
+.catalog .bd {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.catalog .bd .item {
+  display: block;
+  float: left;
+  height: 216px;
+  width: 144px;
+  margin-right: 34px;
+}
+
+.catalog .bd .item.last {
+  margin-right: 0;
+}
+
+.catalog .bd .item .icon {
+  height: 144px;
+  width: 144px;
+}
+
+.catalog .bd .item .txt {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  height: 72px;
+  width: 144px;
+}
