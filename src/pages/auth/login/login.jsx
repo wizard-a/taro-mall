@@ -1,6 +1,7 @@
-import Taro , { Component, getApp } from '@tarojs/taro';
+import Taro , { Component } from '@tarojs/taro';
 import { View , Button} from '@tarojs/components';
 import { showErrorToast } from '../../../utils/util';
+import {set as setGlobalData} from '../../../global_data';
 
 import * as user from '../../../utils/user';
 
@@ -22,9 +23,8 @@ class Login extends Component {
 
   wxLogin = (e) => {
     console.log('e', e);
-    const app = getApp();
     if (e.detail.userInfo == undefined) {
-      app.globalData.hasLogin = false;
+      setGlobalData('hasLogin', false)
       showErrorToast('微信登录失败');
       return;
     }
@@ -32,13 +32,12 @@ class Login extends Component {
     user.checkLogin().catch(() => {
 
       user.loginByWeixin(e.detail.userInfo).then(() => {
-        app.globalData.hasLogin = true;
-
+        setGlobalData('hasLogin', true)
         Taro.navigateBack({
           delta: 1
         })
       }).catch(() => {
-        app.globalData.hasLogin = false;
+        setGlobalData('hasLogin', false)
         showErrorToast('微信登录失败');
       });
 

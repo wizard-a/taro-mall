@@ -550,6 +550,19 @@ class Goods extends Component {
     }
   }
 
+    //获取选中的团购信息
+  getCheckedGrouponValue = () => {
+    let checkedValues = {};
+    let _grouponList = this.state.groupon;
+    for (let i = 0; i < _grouponList.length; i++) {
+      if (_grouponList[i].checked) {
+        checkedValues = _grouponList[i];
+      }
+    }
+
+    return checkedValues;
+  }
+
   addFast = () => {
     if (this.state.openAttr == false) {
       //打开规格选择窗口

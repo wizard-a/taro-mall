@@ -3,6 +3,8 @@ import { Provider } from '@tarojs/redux'
 import 'taro-ui/dist/style/index.scss';
 import dva from './dva';
 import models from './models';
+import * as user from './utils/user';
+import {set as setGlobalData, get as getGlobalData} from './global_data';
 
 import Index from './pages/index'
 
@@ -32,14 +34,17 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index',
+      'pages/ucenter/index/index',
       'pages/auth/login/login',
+      'pages/index/index',
       'pages/auth/accountLogin/accountLogin',
       'pages/goods/goods',
       'pages/search/search',
       'pages/catalog/catalog',
       'pages/cart/cart',
-      'pages/user/user',
+
+      'pages/auth/register/register'
+
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -56,7 +61,7 @@ class App extends Component {
         "pagePath": "pages/index/index",
         "iconPath": './static/images/home.png',
         "selectedIconPath": './static/images/home@selected.png',
-        "text": "首页1"
+        "text": "首页"
       }, {
         "pagePath": "pages/catalog/catalog",
         "iconPath": './static/images/category.png',
@@ -68,7 +73,7 @@ class App extends Component {
         "selectedIconPath": './static/images/cart@selected.png',
         "text": "购物车"
       }, {
-        "pagePath": 'pages/user/user',
+        "pagePath": 'pages/ucenter/index/index',
         "iconPath": './static/images/my.png',
         "selectedIconPath": './static/images/my@selected.png',
         "text": "个人"
@@ -88,7 +93,29 @@ class App extends Component {
     "debug": true,
   }
 
-  componentDidShow () {}
+  componentWillMount() {
+    const updateManager = Taro.getUpdateManager();
+    Taro.getUpdateManager().onUpdateReady(function() {
+      Taro.showModal({
+        title: '更新提示',
+        content: '新版本已经准备好，是否重启应用？',
+        success: function(res) {
+          if (res.confirm) {
+            // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+            updateManager.applyUpdate()
+          }
+        }
+      })
+    })
+  }
+
+  componentDidShow () {
+    user.checkLogin().then(res => {
+      setGlobalData('hasLogin', true);
+    }).catch(() => {
+      setGlobalData('hasLogin', false);
+    });
+  }
 
   componentDidHide () {}
 

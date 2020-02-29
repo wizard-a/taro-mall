@@ -1,4 +1,5 @@
 import Taro from '@tarojs/taro';
+import {showErrorToast} from '../utils/util';
 
 
 /**
@@ -30,8 +31,16 @@ function request(url, data = {}, method = "GET") {
             Taro.navigateTo({
               url: '/pages/auth/login/login'
             });
-          } else {
+          } else if(res.data.errno == 0) {
             resolve(res.data.data);
+          } else {
+            // Taro.showModal({
+            //   title: '错误信息',
+            //   content: res.data.errmsg,
+            //   showCancel: false
+            // });
+            showErrorToast(res.data.errmsg);
+            reject(res.data.errmsg);
           }
         } else {
           reject(res.errMsg);

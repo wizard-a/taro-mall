@@ -56,9 +56,9 @@ const config = {
         }
       },
       url: {
-        enable: true,
+        enable: false,
         config: {
-          limit: 10240 // 设定转换尺寸上限
+          limit: 5 // 设定转换尺寸上限
         }
       },
       cssModules: {
