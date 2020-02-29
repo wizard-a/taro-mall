@@ -1,5 +1,5 @@
-import Taro , { Component } from '@tarojs/taro';
-import { View, Text , Image, ScrollView, Navigator, Input} from '@tarojs/components';
+import Taro , { Component, clearStorage } from '@tarojs/taro';
+import { View, Text , Image, ScrollView, Navigator, Input, CheckboxGroup} from '@tarojs/components';
 import { AtIcon } from 'taro-ui';
 import { connect } from '@tarojs/redux';
 import './index.less';
@@ -34,6 +34,11 @@ class Search extends Component {
 
   componentDidMount () {
     this.getSearchKeyword();
+  }
+
+  componentWillUnmount () {
+    const { dispatch } = this.props;
+    dispatch({type: 'search/REST'});
   }
 
   getSearchKeyword = () => {
@@ -218,10 +223,10 @@ class Search extends Component {
         {
           !searchStatus && <View className='no-search'>
             {
-              !keyword  && historyKeywordList.length && <View className='search-keywords search-history'>
+              !keyword  && historyKeywordList.length > 0 && <View className='search-keywords search-history'>
                 <View className='h'>
                   <Text className='title'>历史记录</Text>
-                  <AtIcon onClick={this.clearHistory} value='close' size='14' color='#666' className='icon'/>
+                  <AtIcon onClick={this.clearHistory} value='close' size='14' color='#666' className='icon' />
                 </View>
                 <View className='b'>
                   {
@@ -233,7 +238,7 @@ class Search extends Component {
               </View>
             }
             {
-              !keyword && hotKeywordList.length && <View className='search-keywords search-hot'>
+              !keyword && hotKeywordList.length > 0 && <View className='search-keywords search-hot'>
                   <View className='h'>
                     <Text className='title'>热门搜索</Text>
                   </View>
@@ -292,7 +297,8 @@ class Search extends Component {
               <View className='b'>
                 {
                   goodsList && goodsList.map((item, index) => {
-                    return <Navigator className={`item ${(index + 1) % 2 == 0 ? 'item-b' : ''}`} url={`/pages/goods/goods?id={item.id}`} key={item.id}>
+                    const newIndex = index;
+                    return <Navigator className={`item ${(newIndex + 1) % 2 == 0 ? 'item-b' : ''}`} url={`/pages/goods/goods?id={item.id}`} key={item.id}>
                     <Image className='img' src={item.picUrl}></Image>
                     <Text className='name'>{item.name}</Text>
                     <Text className='price'>￥{item.retailPrice}</Text>

@@ -29,6 +29,12 @@ const config = {
       ]
     ]
   },
+  uglify: {
+    enable: true,
+    config: {
+      // 配置项同 https://github.com/mishoo/UglifyJS2#minify-options
+    }
+  },
   defineConstants: {
   },
   mini: {
@@ -62,6 +68,11 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    webpackChain (chain, webpack) {
+      // 是否开启打包文件分析
+      // chain.plugin('analyzer')
+      //   .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
     }
   },
   h5: {

@@ -15,3 +15,27 @@ export async function getGoodsCount() {
 export async function getGoodsList({keyword, page, limit, sort, order, categoryId}) {
   return request.get(Api.GoodsList, {keyword, page, limit, sort, order, categoryId});
 }
+
+
+/**
+ *  获取商品总数量
+ */
+export async function getGoodsDetail(id) {
+  return request.get(Api.GoodsDetail, {id});
+}
+
+/**
+ *  获取推荐商品
+ */
+export async function getGoodsRelated(id) {
+  return request.get(Api.GoodsRelated, {id});
+}
+
+/**
+ *  获取推荐商品
+ */
+export async function goodsCollectAddOrDelete(payload) {
+  return request.post(Api.CollectAddOrDelete, payload);
+}
+
+

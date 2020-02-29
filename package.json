@@ -73,6 +73,7 @@
     "eslint-plugin-taro": "2.0.4",
     "stylelint": "9.3.0",
     "stylelint-config-taro-rn": "2.0.4",
-    "stylelint-taro-rn": "2.0.4"
+    "stylelint-taro-rn": "2.0.4",
+    "webpack-bundle-analyzer": "^3.6.0"
   }
 }

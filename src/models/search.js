@@ -1,18 +1,21 @@
 import {getSearchHelper, getSearchIndex, clearHistory} from '../services/search';
 import {getGoodsList} from '../services/goods';
+import { resetStore } from '../utils/app';
 
+
+const initState = {
+  helpKeyword: [],
+  goodsList: [],
+  filterCategoryList: [],
+  /** searchIndex 接口数据 */
+  historyKeywordList: [],
+  defaultKeyword: {},
+  hotKeywordList: []
+}
 
 export default {
   namespace: 'search',
-  state: {
-    helpKeyword: [],
-    goodsList: [],
-    filterCategoryList: [],
-    /** searchIndex 接口数据 */
-    historyKeywordList: [],
-    defaultKeyword: {},
-    hotKeywordList: []
-  },
+  state: {...initState},
   reducers: {
     saveHelpKeyword: (state, {payload}) => {
       state.helpKeyword = payload;
@@ -31,6 +34,9 @@ export default {
     },
     changeFilterCategoryList: (state, {payload}) => {
       state.filterCategoryList = payload;
+    },
+    REST: (state) => {
+      resetStore(state, initState);
     }
   },
   effects: {

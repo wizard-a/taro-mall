@@ -24,6 +24,9 @@ function createApp(opt) {
   dispatch = store.dispatch;
 
   app.dispatch = dispatch;
+  if (window) {
+    window.g_app = app;
+  }
   return app;
 }
 
