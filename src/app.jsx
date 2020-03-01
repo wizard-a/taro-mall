@@ -34,9 +34,10 @@ class App extends Component {
 
   config = {
     pages: [
+      'pages/index/index',
       'pages/ucenter/index/index',
       'pages/auth/login/login',
-      'pages/index/index',
+
       'pages/auth/accountLogin/accountLogin',
       'pages/goods/goods',
       'pages/search/search',
@@ -94,19 +95,25 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const updateManager = Taro.getUpdateManager();
-    Taro.getUpdateManager().onUpdateReady(function() {
-      Taro.showModal({
-        title: '更新提示',
-        content: '新版本已经准备好，是否重启应用？',
-        success: function(res) {
-          if (res.confirm) {
-            // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
-            updateManager.applyUpdate()
+    this.update();
+  }
+
+  update = () => {
+    if(process.env.TARO_ENV === 'weapp') {
+      const updateManager = Taro.getUpdateManager();
+      Taro.getUpdateManager().onUpdateReady(function() {
+        Taro.showModal({
+          title: '更新提示',
+          content: '新版本已经准备好，是否重启应用？',
+          success: function(res) {
+            if (res.confirm) {
+              // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+              updateManager.applyUpdate()
+            }
           }
-        }
+        })
       })
-    })
+    }
   }
 
   componentDidShow () {
