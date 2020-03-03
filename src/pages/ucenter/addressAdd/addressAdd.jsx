@@ -47,7 +47,8 @@ class Index extends Component {
     checkedList: []
   }
 
-  constructor() {
+  constructor(props) {
+    super(props);
     this.checkboxOption = [{value: 'default', label: '设为默认地址'}]
   }
 
