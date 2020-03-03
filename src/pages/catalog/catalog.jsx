@@ -58,7 +58,7 @@ class Index extends Component {
           </Navigator>
         </View>
         <View className='catalog'>
-          <ScrollView className='nav' scroll-y='true'>
+          <ScrollView className='nav' scrollY>
             {
               Array.isArray(categoryList) && categoryList.map(item => {
                 return  <View
@@ -71,7 +71,7 @@ class Index extends Component {
               })
             }
           </ScrollView>
-          <ScrollView className='cate' scroll-y='true'>
+          <ScrollView className='cate' scrollY>
             <Navigator url='url' className='banner'>
               <Image className='image' src={currentCategory.picUrl}></Image>
               <View className='txt'>{currentCategory.frontName}</View>

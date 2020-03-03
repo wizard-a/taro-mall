@@ -31,8 +31,9 @@ class Index extends Component {
     if (this.state.totalPages > this.state.page) {
       this.setState({
         page: this.state.page + 1
+      }, () => {
+        this.getFootprintList();
       });
-      this.getFootprintList();
     } else {
       Taro.showToast({
         title: '没有更多用户足迹了',

@@ -24,4 +24,14 @@ export async function couponSelectList(payload) {
   return request.post(Api.CouponSelectList, payload);
 }
 
+/**
+ *  领取 优惠券
+ */
+export async function couponReceive(payload) {
+  return request.post(Api.CouponReceive, payload);
+}
 
+
+export async function getCouponListApi(payload) {
+  return request.get(Api.CouponList, payload);
+}

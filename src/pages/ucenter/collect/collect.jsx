@@ -44,8 +44,10 @@ class Index extends Component {
     if (this.state.totalPages > this.state.page) {
       this.setState({
         page: this.state.page + 1
+      }, () => {
+        this.getCollectList();
       });
-      this.getCollectList();
+
     } else {
       Taro.showToast({
         title: '没有更多用户收藏了',

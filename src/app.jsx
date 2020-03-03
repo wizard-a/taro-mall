@@ -34,11 +34,11 @@ class App extends Component {
 
   config = {
     pages: [
+      'pages/index/index',
       'pages/ucenter/index/index',
       'pages/ucenter/address/address',
       'pages/ucenter/addressAdd/addressAdd',
       'pages/auth/login/login',
-      'pages/index/index',
       'pages/checkout/checkout',
 
       'pages/auth/accountLogin/accountLogin',
@@ -55,6 +55,9 @@ class App extends Component {
       'pages/ucenter/collect/collect',
       'pages/ucenter/footprint/footprint',
       'pages/ucenter/couponSelect/couponSelect',
+      'pages/payResult/payResult',
+      'pages/category/category',
+      'pages/coupon/coupon'
 
     ],
     window: {

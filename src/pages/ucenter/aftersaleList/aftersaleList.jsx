@@ -39,8 +39,10 @@ class Index extends Component {
     if (this.state.totalPages > this.state.page) {
       this.setState({
         page: this.data.page + 1
+      }, () => {
+        this.getAftersaleList();
       });
-      this.getAftersaleList();
+
     } else {
       Taro.showToast({
         title: '没有更多售后了',
@@ -59,8 +61,10 @@ class Index extends Component {
       page: 1,
       limit: 10,
       totalPages: 1
+    }, () => {
+      this.getAftersaleList();
     });
-    this.getAftersaleList();
+
   }
 
   render() {

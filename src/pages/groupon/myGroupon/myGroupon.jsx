@@ -48,8 +48,10 @@ class Index extends Component {
     let showType = event.currentTarget.dataset.index;
     this.setState({
       showType: showType
+    }, () => {
+      this.getOrderList();
     });
-    this.getOrderList();
+
   }
 
   render() {

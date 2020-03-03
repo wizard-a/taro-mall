@@ -53,6 +53,8 @@ class Index extends Component {
         couponId: couponId,
         userCouponId: userCouponId,
         grouponRulesId: grouponRulesId
+      }, () => {
+        this.getCouponList();
       });
 
     } catch (e) {
@@ -60,35 +62,35 @@ class Index extends Component {
       console.log(e);
     }
 
-    this.getCouponList();
   }
 
   getCouponList = () => {
     this.setState({
       couponList: []
-    });
-    // 页面渲染完成
-    Taro.showToast({
-      title: '加载中...',
-      icon: 'loading',
-      duration: 2000
-    });
-
-    CouponSelectList({
-      cartId: this.state.cartId,
-      grouponRulesId: this.state.grouponRulesId,
-    }).then(res => {
-      let list = [];
-      for (var i = 0; i < res.list.length; i++) {
-        if (res.list[i].available) {
-          list.push(res.list[i]);
-        }
-      }
-      this.setState({
-        couponList: list
+    }, () => {
+      // 页面渲染完成
+      Taro.showToast({
+        title: '加载中...',
+        icon: 'loading',
+        duration: 2000
       });
-      Taro.hideToast();
-    })
+
+      CouponSelectList({
+        cartId: this.state.cartId,
+        grouponRulesId: this.state.grouponRulesId,
+      }).then(res => {
+        let list = [];
+        for (var i = 0; i < res.list.length; i++) {
+          if (res.list[i].available) {
+            list.push(res.list[i]);
+          }
+        }
+        this.setState({
+          couponList: list
+        });
+        Taro.hideToast();
+      })
+    });
   }
   componentDidHide () {}
   componentDidCatchError () {}

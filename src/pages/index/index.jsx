@@ -2,7 +2,8 @@ import Taro, { PureComponent } from '@tarojs/taro'
 import { View, Text, Navigator, Swiper, SwiperItem, Image, ScrollView, Block } from '@tarojs/components'
 import { connect } from '@tarojs/redux';
 import { AtIcon, AtTag } from 'taro-ui';
-
+import { get as getGlobalData} from '../../global_data';
+import { couponReceive } from '../../services/coupon';
 
 import './index.less'
 
@@ -24,6 +25,94 @@ class Index extends PureComponent {
     const { dispatch } = this.props;
     dispatch({type: 'home/getIndex'})
     dispatch({type: 'goods/getGoodsCount'})
+  }
+
+  onPullDownRefresh() {
+    Taro.showNavigationBarLoading() //在标题栏中显示加载
+    this.getData();
+    Taro.hideNavigationBarLoading() //完成停止加载
+    Taro.stopPullDownRefresh() //停止下拉刷新
+  }
+
+  componentWillMount() {
+    // 页面初始化 options为页面跳转所带来的参数
+    let {scene, grouponId, goodId, orderId} =  this.$router.params;
+    if (scene) {
+      //这个scene的值存在则证明首页的开启来源于朋友圈分享的图,同时可以通过获取到的goodId的值跳转导航到对应的详情页
+      scene = decodeURIComponent(scene);
+      console.log("scene:" + scene);
+
+      let info_arr = [];
+      info_arr = scene.split(',');
+      let _type = info_arr[0];
+      let id = info_arr[1];
+
+      if (_type == 'goods') {
+        Taro.navigateTo({
+          url: '../goods/goods?id=' + id
+        });
+      } else if (_type == 'groupon') {
+        Taro.navigateTo({
+          url: '../goods/goods?grouponId=' + id
+        });
+      } else {
+        Taro.navigateTo({
+          url: '../index/index'
+        });
+      }
+    }
+
+    // 页面初始化 options为页面跳转所带来的参数
+    if (grouponId) {
+      //这个pageId的值存在则证明首页的开启来源于用户点击来首页,同时可以通过获取到的pageId的值跳转导航到对应的详情页
+      Taro.navigateTo({
+        url: '../goods/goods?grouponId=' + grouponId
+      });
+    }
+
+    // 页面初始化 options为页面跳转所带来的参数
+    if (goodId) {
+      //这个goodId的值存在则证明首页的开启来源于分享,同时可以通过获取到的goodId的值跳转导航到对应的详情页
+      Taro.navigateTo({
+        url: '../goods/goods?id=' + goodId
+      });
+    }
+
+    // 页面初始化 options为页面跳转所带来的参数
+    if (orderId) {
+      //这个orderId的值存在则证明首页的开启来源于订单模版通知,同时可以通过获取到的pageId的值跳转导航到对应的详情页
+      Taro.navigateTo({
+        url: '../ucenter/orderDetail/orderDetail?id=' + orderId
+      });
+    }
+
+    this.getData();
+
+  }
+
+  onShareAppMessage () {
+    return {
+      title: 'Taro mall小程序商场',
+      desc: 'Taro 开源微信小程序商城',
+      path: '/pages/index/index'
+    }
+  }
+
+  getCoupon = (e) => {
+    if (!getGlobalData('hasLogin')) {
+      Taro.navigateTo({
+        url: "/pages/auth/login/login"
+      });
+    }
+
+    let couponId = e.currentTarget.dataset.index;
+    couponReceive({
+      couponId: couponId
+    }).then(() => {
+      Taro.showToast({
+        title: "领取成功"
+      })
+    })
   }
 
   render () {
@@ -61,30 +150,6 @@ class Index extends PureComponent {
         </View>
 
         {
-          data.newGoodsList && data.newGoodsList.length > 0 && <View className='a-section a-new'>
-              <View className='h'>
-                <View>
-                  <Navigator url='../newGoods/newGoods'>
-                    <Text className='txt'>周一周四 · 新品首发</Text>
-                  </Navigator>
-                </View>
-              </View>
-              <View className='b'>
-                {data.newGoodsList.map(item => {
-                  return <View className='item' key={item.id}>
-                    <Navigator url={`../goods/goods?id=${item.id}`}>
-                      <Image className='img' src={item.picUrl}></Image>
-                      <Text className='name'>{item.name}</Text>
-                      <Text className='price'>￥{item.retailPrice}</Text>
-                    </Navigator>
-                  </View>
-                })}
-
-              </View>
-          </View>
-        }
-
-        {
           data.couponList && data.couponList.length > 0 && <View className='a-section a-coupon'>
             <View className='h'>
               <View className='title'>
@@ -98,7 +163,7 @@ class Index extends PureComponent {
             <View className='b'>
               {
                 data.couponList.map(item => {
-                  return <View className='item' key={item.id}>
+                  return <View onClick={this.getCoupon} data-index={item.id} className='item' key={item.id}>
                     <View className='tag'>{item.tag}</View>
                     <View className='content'>
                       <View className='left'>
@@ -158,6 +223,30 @@ class Index extends PureComponent {
                 })
               }
             </View>
+          </View>
+        }
+
+        {
+          data.newGoodsList && data.newGoodsList.length > 0 && <View className='a-section a-new'>
+              <View className='h'>
+                <View>
+                  <Navigator url='../newGoods/newGoods'>
+                    <Text className='txt'>周一周四 · 新品首发</Text>
+                  </Navigator>
+                </View>
+              </View>
+              <View className='b'>
+                {data.newGoodsList.map(item => {
+                  return <View className='item' key={item.id}>
+                    <Navigator url={`../goods/goods?id=${item.id}`}>
+                      <Image className='img' src={item.picUrl}></Image>
+                      <Text className='name'>{item.name}</Text>
+                      <Text className='price'>￥{item.retailPrice}</Text>
+                    </Navigator>
+                  </View>
+                })}
+
+              </View>
           </View>
         }
 

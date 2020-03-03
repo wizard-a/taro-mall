@@ -63,8 +63,9 @@ class Goods extends Component {
     if (grouponId) {
       this.setState({
         isGroupon: true,
+      }, () => {
+        this.getGrouponInfo(grouponId);
       });
-      this.getGrouponInfo(grouponId);
     }
 
     let that = this;
@@ -183,7 +184,9 @@ class Goods extends Component {
 
       // WxParse.wxParse('goodsDetail', 'html', res.info.detail, that);
       //获取推荐商品
-      this.getGoodsRelated();
+      setTimeout(() => {
+        this.getGoodsRelated();
+      }, 5)
 
     });
   }
@@ -419,9 +422,11 @@ class Goods extends Component {
     }
     this.setState({
       specificationList: _specificationList,
+    }, () =>{
+      //重新计算spec改变后的信息
+      this.changeSpecInfo();
     });
-    //重新计算spec改变后的信息
-    this.changeSpecInfo();
+
 
     //重新计算哪些值不可以点击
   }

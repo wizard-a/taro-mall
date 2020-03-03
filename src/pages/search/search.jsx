@@ -66,11 +66,11 @@ class Search extends Component {
     this.setState({
       keyword: value,
       searchStatus: false,
+    }, () => {
+      if (value) {
+        this.getHelpKeyword(value);
+      }
     })
-
-    if (value) {
-      this.getHelpKeyword(value);
-    }
   }
 
   /**
@@ -89,11 +89,11 @@ class Search extends Component {
     const {value} = e.target;
     this.setState({
       searchStatus: false,
+    }, () => {
+      if (value) {
+        this.getHelpKeyword(value);
+      }
     })
-
-    if (value) {
-      this.getHelpKeyword(value);
-    }
   }
 
   getSearchResult = (keyword) => {

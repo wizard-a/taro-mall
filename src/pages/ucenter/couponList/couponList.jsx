@@ -41,19 +41,21 @@ class Index extends Component {
       scrollTop: 0,
       showPage: false,
       couponList: []
+    }, () => {
+      getCouponMyList({
+        status: this.state.status,
+        page: this.state.page,
+        limit: this.state.limit
+      }).then(res => {
+        this.setState({
+          scrollTop: 0,
+          couponList: res.list,
+          showPage: res.total > this.limit,
+          count: res.total
+        });
+      })
     });
-    getCouponMyList({
-      status: this.state.status,
-      page: this.state.page,
-      limit: this.state.limit
-    }).then(res => {
-      this.setState({
-        scrollTop: 0,
-        couponList: res.list,
-        showPage: res.total > this.limit,
-        count: res.total
-      });
-    })
+
 
   }
 
@@ -66,9 +68,11 @@ class Index extends Component {
       count: 0,
       scrollTop: 0,
       showPage: false
+    }, () => {
+      this.getCouponList();
     });
 
-    this.getCouponList();
+
   }
 
   bindExchange = (e) => {
@@ -109,8 +113,10 @@ class Index extends Component {
 
     this.setState({
       page: this.state.page - 1
+    }, () => {
+      this.getCouponList();
     });
-    this.getCouponList();
+
   }
 
   nextPag = () => {
@@ -120,9 +126,9 @@ class Index extends Component {
 
     this.setState({
       page: this.state.page + 1
+    }, () => {
+      this.getCouponList();
     });
-
-    this.getCouponList();
 
   }
 

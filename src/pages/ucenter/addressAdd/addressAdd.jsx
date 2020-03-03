@@ -58,8 +58,10 @@ class Index extends Component {
      if (id && id != 0) {
        this.setState({
          addressId: id
+       }, () => {
+        this.getAddressDetail();
        });
-       this.getAddressDetail();
+
      }
   }
   componentWillReceiveProps (nextProps,nextContext) {}
@@ -142,7 +144,10 @@ class Index extends Component {
       });
     }
 
-    this.setRegionDoneStatus();
+    setTimeout(() => {
+      this.setRegionDoneStatus();
+    }, 5);
+
   }
 
   bindinputAddress = (event) => {
@@ -206,8 +211,9 @@ class Index extends Component {
       this.setState({
         regionList: regionList
       })
-
-      this.setRegionDoneStatus();
+      setTimeout(() => {
+        this.setRegionDoneStatus();
+      }, 5);
       return
     }
 
@@ -239,8 +245,10 @@ class Index extends Component {
     this.setState({
       regionList: regionList
     })
+    setTimeout(() => {
+      this.setRegionDoneStatus();
+    }, 5);
 
-    this.setRegionDoneStatus();
   }
 
   setRegionDoneStatus = () => {
@@ -364,9 +372,9 @@ class Index extends Component {
     this.setState({
       regionList: regionList,
       regionType: regionTypeIndex + 1
+    }, () => {
+      this.setRegionDoneStatus();
     })
-
-    this.setRegionDoneStatus();
   }
 
   render() {
