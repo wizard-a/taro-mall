@@ -1,0 +1,242 @@
+page {
+  background: #f4f4f4;
+  min-height: 100%;
+}
+
+.container {
+  background: #f4f4f4;
+  min-height: 100%;
+  padding-top: 30px;
+}
+
+.container .h {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  background: #fff;
+  height: 84px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.container .h .item {
+  display: inline-block;
+  height: 82px;
+  width: 50%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.container .h .item .txt {
+  display: inline-block;
+  height: 82px;
+  padding: 0 20px;
+  line-height: 82px;
+  color: #333;
+  font-size: 30px;
+  width: 170px;
+}
+
+.container .h .item.active .txt {
+  color: #ab2b2b;
+  border-bottom: 4px solid #ab2b2b;
+}
+
+.container .b {
+  margin-top: 85px;
+  height: auto;
+}
+
+.container .b .coupon-form {
+  height: 110px;
+  width: 100%;
+  background: #fff;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  display: flex;
+}
+
+.container .b .input-box {
+  flex: 1;
+  height: 70px;
+  color: #333;
+  font-size: 24px;
+  background: #fff;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  margin-right: 30px;
+}
+
+.container .b .input-box .coupon-sn {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  height: 50px;
+  width: 100%;
+  color: #000;
+  line-height: 50px;
+  font-size: 24px;
+}
+
+.container .b .clear-icon {
+  position: absolute;
+  top: 25px;
+  right: 18px;
+  z-index: 2;
+  display: block;
+  background: #fff;
+}
+
+.container .b .add-btn {
+  height: 70px;
+  border: none;
+  width: 168px;
+  background: #b4282d;
+  border-radius: 0;
+  line-height: 70px;
+  color: #fff;
+  font-size: 28px;
+  text-align: center;
+}
+
+.container .b .add-btn.disabled {
+  background: #ccc;
+}
+
+.container .b .help {
+  height: 72px;
+  line-height: 72px;
+  text-align: right;
+  padding-right: 30px;
+  background-size: 28px;
+  color: #999;
+  font-size: 24px;
+}
+
+.container .b .coupon-list {
+  width: 750px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container .b .item {
+  position: relative;
+  height: 290px;
+  background: #ccc7c7;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 52px;
+}
+
+.container .b .item.active {
+  background: linear-gradient(to right, #cfa568, #e3bf79);
+}
+
+.container .b .tag {
+  height: 32px;
+  background: #a48143;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: absolute;
+  left: 20px;
+  color: #fff;
+  top: 20px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 32px;
+}
+
+.container .b .content {
+  margin-top: 24px;
+  margin-left: 40px;
+  display: flex;
+  margin-right: 40px;
+  flex-direction: row;
+}
+
+.container .b .content .left {
+  flex: 1;
+}
+
+.container .b .discount {
+  font-size: 50px;
+  color: #b4282d;
+}
+
+.container .b .min {
+  color: #fff;
+}
+
+.container .b .content .right {
+  width: 400px;
+}
+
+.container .b .name {
+  font-size: 44px;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.container .b .time {
+  font-size: 24px;
+  color: #fff;
+  line-height: 30px;
+}
+
+.container .b .condition {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 78px;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 24px 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.container .b .condition .txt {
+  display: block;
+  height: 30px;
+  flex: 1;
+  overflow: hidden;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+}
+
+.container .b .condition .icon {
+  margin-left: 30px;
+  width: 24px;
+  height: 24px;
+}
+
+.container .b .page {
+  width: 750px;
+  height: 108px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.container .b .page view {
+  height: 108px;
+  width: 50%;
+  float: left;
+  font-size: 29px;
+  color: #333;
+  text-align: center;
+  line-height: 108px;
+}
+
+.container .b .page .prev {
+  border-right: 1px solid #d9d9d9;
+}
+
+.container .b .page .disabled {
+  color: #ccc;
+}

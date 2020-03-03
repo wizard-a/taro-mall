@@ -52,10 +52,10 @@ class AccountLogin extends Component {
         loginErrorCount: 0
       });
       setGlobalData('hasLogin', true);
-      Taro.setStorageSync('userInfo', res.data.userInfo);
+      Taro.setStorageSync('userInfo', res.userInfo);
       Taro.setStorage({
         key: "token",
-        data: res.data.token,
+        data: res.token,
         success: function() {
           Taro.switchTab({
             url: '/pages/ucenter/index/index'

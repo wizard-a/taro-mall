@@ -23,3 +23,24 @@ export async function cartFastAdd(payload) {
 export async function getCartGoodsCount(payload) {
   return request.post(Api.CartGoodsCount, payload);
 }
+
+
+export async function cartCheckout(payload) {
+  return request.get(Api.CartCheckout, payload)
+}
+
+/**
+ *  提交订单
+ */
+export async function orderSubmit(payload) {
+  return request.post(Api.OrderSubmit, payload);
+}
+
+/**
+ *  订单重新支付
+ */
+export async function orderPrepay(payload) {
+  return request.post(Api.OrderPrepay, payload);
+}
+
+

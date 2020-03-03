@@ -59,6 +59,31 @@ class Index extends PureComponent {
             })
           }
         </View>
+
+        {
+          data.newGoodsList && data.newGoodsList.length > 0 && <View className='a-section a-new'>
+              <View className='h'>
+                <View>
+                  <Navigator url='../newGoods/newGoods'>
+                    <Text className='txt'>周一周四 · 新品首发</Text>
+                  </Navigator>
+                </View>
+              </View>
+              <View className='b'>
+                {data.newGoodsList.map(item => {
+                  return <View className='item' key={item.id}>
+                    <Navigator url={`../goods/goods?id=${item.id}`}>
+                      <Image className='img' src={item.picUrl}></Image>
+                      <Text className='name'>{item.name}</Text>
+                      <Text className='price'>￥{item.retailPrice}</Text>
+                    </Navigator>
+                  </View>
+                })}
+
+              </View>
+          </View>
+        }
+
         {
           data.couponList && data.couponList.length > 0 && <View className='a-section a-coupon'>
             <View className='h'>
@@ -161,30 +186,6 @@ class Index extends PureComponent {
                 })
               }
             </View>
-          </View>
-        }
-
-        {
-          data.newGoodsList && data.newGoodsList.length > 0 && <View className='a-section a-new'>
-              <View className='h'>
-                <View>
-                  <Navigator url='../newGoods/newGoods'>
-                    <Text className='txt'>周一周四 · 新品首发</Text>
-                  </Navigator>
-                </View>
-              </View>
-              <View className='b'>
-                {data.newGoodsList.map(item => {
-                  return <View className='item' key={item.id}>
-                    <Navigator url={`../goods/goods?id=${item.id}`}>
-                      <Image className='img' src={item.picUrl}></Image>
-                      <Text className='name'>{item.name}</Text>
-                      <Text className='price'>￥{item.retailPrice}</Text>
-                    </Navigator>
-                  </View>
-                })}
-
-              </View>
           </View>
         }
 

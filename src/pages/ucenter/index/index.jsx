@@ -1,7 +1,8 @@
-import Taro , { Component } from '@tarojs/taro';
+import Taro , { Component, clearStorage } from '@tarojs/taro';
 import { View, Text , Button, Image} from '@tarojs/components';
 import {bindPhone, logOut} from '../../../services/auth';
-import {set as setGlobalData} from '../../../global_data';
+import { getUserIndex } from '../../../services/user';
+import {set as setGlobalData, get as getGlobalData} from '../../../global_data';
 import * as images from '../../../static/images/index';
 import './index.less';
 
@@ -29,14 +30,22 @@ class Index extends Component {
 
 
 
-  componentWillMount () {}
-  componentDidMount () {}
-  componentWillReceiveProps (nextProps,nextConText) {}
-  componentWillUnmount () {}
-  componentDidShow () {}
-  componentDidHide () {}
-  componentDidCatchError () {}
-  componentDidNotFound () {}
+  componentDidShow () {
+    //获取用户的登录信息
+    if (getGlobalData('hasLogin')) {
+      let userInfo = Taro.getStorageSync('userInfo');
+      this.setState({
+        userInfo: userInfo,
+        hasLogin: true
+      });
+
+      getUserIndex().then(res => {
+        this.setState({
+          order: res.order
+        });
+      });
+    }
+  }
 
   goLogin = () => {
     if (!this.state.hasLogin) {
@@ -63,27 +72,27 @@ class Index extends Component {
     }
   }
 
-  goOrderIndex = () => {
+  goOrderIndex = (e) => {
     // TODO 需处理
-    // if (this.state.hasLogin) {
-    //   let tab = e.currentTarget.dataset.index
-    //   let route = e.currentTarget.dataset.route
-    //   try {
-    //     wx.setStorageSync('tab', tab);
-    //   } catch (e) {
+    if (this.state.hasLogin) {
+      let tab = e.currentTarget.dataset.index
+      let route = e.currentTarget.dataset.route
+      try {
+        Taro.setStorageSync('tab', tab);
+      } catch (e) {
 
-    //   }
-    //   wx.navigateTo({
-    //     url: route,
-    //     success: function(res) {},
-    //     fail: function(res) {},
-    //     complete: function(res) {},
-    //   })
-    // } else {
-    //   wx.navigateTo({
-    //     url: "/pages/auth/login/login"
-    //   });
-    // };
+      }
+      Taro.navigateTo({
+        url: route,
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    } else {
+      Taro.navigateTo({
+        url: "/pages/auth/login/login"
+      });
+    };
   }
 
   goAfterSale = () => {
