@@ -54,14 +54,14 @@ https://shop.xinmeitop.com/boss
 
 项目截图
 ------------------
-<img src='./public/images/1-1.jpeg' width='375px' height='667px'>
-<img src='./public/images/1-2.jpeg' width='375px' height='667px'><br> 
+<img src='./public/images/1-1.jpeg' width='320px' height='568px'>
+<img src='./public/images/1-2.jpeg' width='320px' height='568px'><br> 
 
-<img src='./public/images/2-1.jpeg' width='375px' height='667px'>
-<img src='./public/images/2-2.jpeg' width='375px' height='667px'><br> 
+<img src='./public/images/2-1.jpeg' width='320px' height='568px'>
+<img src='./public/images/2-2.jpeg' width='320px' height='568px'><br> 
 
-<img src='./public/images/3-1.jpeg' width='375px' height='667px'>
-<img src='./public/images/3-2.jpeg' width='375px' height='667px'><br> 
+<img src='./public/images/3-1.jpeg' width='320px' height='568px'>
+<img src='./public/images/3-2.jpeg' width='320px' height='568px'><br> 
 
 
 项目架构
