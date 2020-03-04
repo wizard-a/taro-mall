@@ -750,7 +750,7 @@ class Goods extends Component {
         </View>
 
         <View className='detail'>
-          { goods.detail && <RichText nodes={goods.detail2} />}
+          { goods.detail && <RichText style={{fontSize: 0}} nodes={goods.detail2} />}
         </View>
 
         <View className='common-problem'>

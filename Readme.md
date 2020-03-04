@@ -9,7 +9,7 @@ Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall
 小程序
 > 由于小程序没有认证，只发布了一个预览版，只能加15个人，如有需要，请点击小程序申请
 
-![avatar](./public/xiaochengxu.jpg)
+<img src='./public/xiaochengxu.jpg' width='300' height='300'/>
 
 
 h5移动端
@@ -54,12 +54,14 @@ https://shop.xinmeitop.com/boss
 
 项目截图
 ------------------
-![首页](./public/images/1-1.jpeg)
-![首页](./public/images/1-2.jpeg)<br> 
-![分类](./public/images/2-1.jpeg)
-![个人中心](./public/images/2-2.jpeg)<br> 
-![订单](./public/images/3-1.jpeg)
-![下单](./public/images/3-2.jpeg)<br> 
+<img src='./public/images/1-1.jpeg' width='375px' height='667px'>
+<img src='./public/images/1-2.jpeg' width='375px' height='667px'><br> 
+
+<img src='./public/images/2-1.jpeg' width='375px' height='667px'>
+<img src='./public/images/2-2.jpeg' width='375px' height='667px'><br> 
+
+<img src='./public/images/3-1.jpeg' width='375px' height='667px'>
+<img src='./public/images/3-2.jpeg' width='375px' height='667px'><br> 
 
 
 项目架构
@@ -79,7 +81,7 @@ https://shop.xinmeitop.com/boss
 --------------
 QQ：1454763497<br>
 微信<br>
-![微信](./public/my.png)
+<img src='./public/my.png' width='300' height='300'/>
 
 License
 ------------

@@ -143,7 +143,7 @@ class Index extends Component {
   }
 
   render() {
-    const {navList, scrollTop, scrollHeight, scrollLeft, currentCategory, goodsList} = this.state;
+    const {navList, scrollTop, scrollHeight, scrollLeft, currentCategory, goodsList, id} = this.state;
     return (
       <View className='container'>
         <View className='cate-nav'>
