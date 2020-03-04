@@ -9,7 +9,7 @@ Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall
 小程序
 > 由于小程序没有认证，只发布了一个预览版，只能加15个人，如有需要，请点击小程序申请
 
-![avatar](./public/xiaochengxu.png)
+![avatar](https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1035415831,1465727770&fm=26&gp=0.jpg)
 
 
 h5移动端
