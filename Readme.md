@@ -7,14 +7,14 @@ Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall
 ------------
 
 小程序
-> 由于小程序没有认真，只发布了一个预览版，只能加15个人，如有需要，请点击小程序申请
+> 由于小程序没有认证，只发布了一个预览版，只能加15个人，如有需要，请点击小程序申请
 
-![avatar](https://gitee.com/qiaojie/taro-mall/raw/master/public/xiaochengxu.png)
+![avatar](./public/xiaochengxu.png)
 
 
 h5移动端
 
-![avatar](https://gitee.com/qiaojie/taro-mall/raw/master/public/mobile.png)
+![avatar](./public/mobile.png)
 
 快速启动
 ------------
@@ -64,7 +64,7 @@ h5移动端
 --------------
 QQ：1454763497<br>
 微信<br>
-![微信](https://gitee.com/qiaojie/taro-mall/raw/master/public/my.png)
+![微信](./public/my.png)
 
 License
 ------------
