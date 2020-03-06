@@ -1,20 +1,18 @@
 小程序
 ------------
-Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall基础上进行开发，前端采用Taro框架编写，现已全部完成小程序和h5移动端，后续会对APP，淘宝，头条，百度小程序进行适配。Taro_Mally已经完成了 litemall 前端的所有功能
+Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall基础上进行开发，前端采用Taro框架编写，现已全部完成小程序和h5移动端，后续会对APP，淘宝，头条，百度小程序进行适配。Taro_Mall已经完成了 litemall 前端的所有功能
 
 
 扫码体验
 ------------
 
-小程序
+
 > 由于小程序没有认证，只发布了一个预览版，只能加15个人，如有需要，请点击小程序申请
 
-<img src='./public/xiaochengxu.jpg' width='300' height='300'/>
+<img src='./public/xiaochengxu.jpg' width='150' height='150' style="margin-right: 50px"/><img src='./public/mobile.png' width='150' height='150'/>
 
 
-h5移动端
-
-![avatar](./public/mobile.png)
+<span style="margin-left: 40px;margin-right: 160px">小程序</span> h5移动端
 
 后台系统地址
 
@@ -33,6 +31,10 @@ https://shop.xinmeitop.com/boss
 * `yarn dev:h5` 启动服务
 * 打开浏览器
 
+系列文章
+--------
+* [01 Taro_Mall 开源多端小程序框架设计](https://www.cnblogs.com/qiaojie/p/12431670.html)
+
 功能
 ------------
 * 首页
@@ -48,17 +50,14 @@ https://shop.xinmeitop.com/boss
 * 订单列表、订单详情
 * 地址、收藏、足迹、意见反馈
 
-项目截图
-------------
-
 
 项目截图
 ------------------
-<img src='./public/images/1-1.jpeg' width='320px' height='568px'><img src='./public/images/1-2.jpeg' width='320px' height='568px' style='margin-left: 10px'><br> 
+<img src='./public/images/1-1.jpeg' width='320px' height='568px' style="margin-right: 15px"><img src='./public/images/1-2.jpeg' width='320px' height='568px' style='margin-left: 10px'><br> 
 
-<img src='./public/images/2-1.jpeg' width='320px' height='568px'><img src='./public/images/2-2.jpeg' width='320px' height='568px' style='margin-left: 10px'><br> 
+<img src='./public/images/2-1.jpeg' width='320px' height='568px' style="margin-right: 15px"><img src='./public/images/2-2.jpeg' width='320px' height='568px' style='margin-left: 10px'><br> 
 
-<img src='./public/images/3-1.jpeg' width='320px' height='568px'><img src='./public/images/3-2.jpeg' width='320px' height='568px' style='margin-left: 10px'><br> 
+<img src='./public/images/3-1.jpeg' width='320px' height='568px' style="margin-right: 15px"><img src='./public/images/3-2.jpeg' width='320px' height='568px' style='margin-left: 10px'><br> 
 
 
 项目架构
@@ -74,11 +73,11 @@ https://shop.xinmeitop.com/boss
 | dva |  基于 redux 和 redux-saga 的数据流方案 |  https://dvajs.com/ |
 | immer | 创建不可变数据 |  https://immerjs.github.io/immer/docs/introduction |
 
+
 联系我
 --------------
-QQ：1454763497<br>
-微信<br>
-<img src='./public/my.png' width='300' height='300'/>
+微信 q1454763497      QQ：1454763497<br>
+
 
 License
 ------------
