@@ -9,12 +9,13 @@ Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall
 小程序
 > 由于小程序没有认证，只发布了一个预览版，只能加15个人，如有需要，请点击小程序申请
 
-<img src='./public/xiaochengxu.jpg' width='300' height='300'/>
+<img src='./public/xiaochengxu.jpg' width='150' height='150'/>
 
 
 h5移动端
 
-![avatar](./public/mobile.png)
+<img src='./public/mobile.png' width='150' height='150'/>
+
 
 后台系统地址
 
@@ -32,6 +33,10 @@ https://shop.xinmeitop.com/boss
 #### h5
 * `yarn dev:h5` 启动服务
 * 打开浏览器
+
+系列文章
+--------
+* [01 Taro_Mall 开源多端小程序框架设计](https://www.cnblogs.com/qiaojie/p/12431670.html)
 
 功能
 ------------
@@ -77,8 +82,8 @@ https://shop.xinmeitop.com/boss
 联系我
 --------------
 QQ：1454763497<br>
-微信<br>
-<img src='./public/my.png' width='300' height='300'/>
+
+微信: <img src='./public/my.png' width='150' height='150'/>
 
 License
 ------------
