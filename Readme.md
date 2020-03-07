@@ -6,11 +6,13 @@ Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall
 扫码体验
 ------------
 
+> 由于小程序没有认证，只发布了一个预览版，只能加15个人，如有需要，请点击小程序申请
 
-<img src='./public/xiaochengxu.jpg' width='150' height='150'/>
+小程序
 
-<img src='./public/xiaochengxu.jpg' width='150' height='150' style="margin-right: 50px"/><img src='./public/mobile.png' width='150' height='150'/>
+<img src='./public/xiaochengxu.jpg' width='150' height='150' style="margin-right: 50px"/>
 
+h5
 
 <img src='./public/mobile.png' width='150' height='150'/>
 
