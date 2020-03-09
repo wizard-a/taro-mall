@@ -77,6 +77,12 @@ https://shop.xinmeitop.com/boss
 | immer | 创建不可变数据 |  https://immerjs.github.io/immer/docs/introduction |
 
 
+赞赏
+-----------
+因服务器是由个人维护，如果这个项目对您有帮助，您可以扫描下面二维码进行捐赠，谢谢。
+
+<img src='./public/wx-pay.png' width='150' height='150'/><img src='./public/ali-pay.png' width='150' height='150'/>
+
 联系我
 --------------
 QQ：1454763497<br>
