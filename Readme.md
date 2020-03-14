@@ -6,7 +6,9 @@ Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall
 扫码体验
 ------------
 
-> 由于小程序没有认证，只发布了一个预览版，只能加15个人，如有需要，请点击小程序申请
+> 由于小程序没有认证，只发布了一个预览版，只能加15个人，如有需要，请点击小程序申请 (申请人数有点多，15个人满了后，只能从后台删除，然后小程序通过申请，比较麻烦。)
+
+哪位朋友有认证过的小程序能放演示项目可以联系我。在这里先谢谢了
 
 小程序
 
@@ -77,17 +79,18 @@ https://shop.xinmeitop.com/boss
 | immer | 创建不可变数据 |  https://immerjs.github.io/immer/docs/introduction |
 
 
+联系我
+--------------
+建立了一个微信交流群，如需加入，请添加微信，备注小程序
+
+
+微信: <img src='./public/my.png' width='150' height='150'/>
+
 赞赏
 -----------
 因服务器是由个人维护，如果这个项目对您有帮助，您可以扫描下面二维码进行捐赠，谢谢。
 
 <img src='./public/wx-pay.png' width='150' height='150'/><img src='./public/ali-pay.png' width='150' height='150'/>
-
-联系我
---------------
-QQ：1454763497<br>
-
-微信: <img src='./public/my.png' width='150' height='150'/>
 
 License
 ------------
