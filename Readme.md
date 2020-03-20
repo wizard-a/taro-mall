@@ -1,6 +1,6 @@
 小程序
 ------------
-Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall基础上进行开发，前端采用Taro框架编写，现已全部完成小程序和h5移动端，后续会对APP，淘宝，头条，百度小程序进行适配。Taro_Mall已经完成了 litemall 前端的所有功能
+Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall基础上进行开发，前端采用Taro框架编写，现已全部完成微信小程序，头条小程序，和h5移动端，后续会对APP，淘宝，百度小程序进行适配。Taro_Mall已经完成了 litemall 前端的所有功能
 
 
 扫码体验
@@ -26,11 +26,15 @@ https://shop.xinmeitop.com/boss
 快速启动
 ------------
 
-#### 小程序
+#### 微信小程序
 * `git clone https://github.com/jiechud/taro-mall.git`
 * `npm install || yarn install`
 * `yarn dev:weapp` 启动服务
 *  用微信开发者工具打开
+
+#### 头条小程序
+* `yarn dev:tt`
+* 头条小程序开发工具打开
 
 #### h5
 * `yarn dev:h5` 启动服务
