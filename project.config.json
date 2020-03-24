@@ -1,8 +1,8 @@
 {
 	"miniprogramRoot": "dist/",
 	"projectname": "xiaochengxu-shop",
-	"description": "严选案例",
-	"appid": "wx5c8bb197f30c7c25",
+	"description": "Taro-Mall多端小程序商城",
+	"appid": "wxd91bfd2bf435ffad",
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
@@ -12,5 +12,6 @@
 	"compileType": "miniprogram",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-	"condition": {}
+  "condition": {},
+  "libVersion": "2.10.3"
 }

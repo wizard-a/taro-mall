@@ -5,12 +5,9 @@ Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall
 
 扫码体验
 ------------
+感谢 @程哥提供的认证的小程序平台，正式版本已在审核当中，审核通过，会放上二维码。微信登录和支付现在已经可以用。(请先不要支付，暂不支持退款，后续会弄一个1分钱的商品)
 
-> 由于小程序没有认证，只发布了一个预览版，只能加15个人，如有需要，请点击小程序申请 (申请人数有点多，15个人满了后，只能从后台删除，然后小程序通过申请，比较麻烦。)
-
-哪位朋友有认证过的小程序能放演示项目可以联系我。在这里先谢谢了
-
-小程序
+小程序(体验版)
 
 <img src='./public/xiaochengxu.jpg' width='150' height='150' style="margin-right: 50px"/>
 
@@ -82,6 +79,11 @@ https://shop.xinmeitop.com/boss
 | dva |  基于 redux 和 redux-saga 的数据流方案 |  https://dvajs.com/ |
 | immer | 创建不可变数据 |  https://immerjs.github.io/immer/docs/introduction |
 
+
+FAQ
+-----------
+1. 账号登录的用户名密码是什么？
+account: user123   password: user123
 
 联系我
 --------------

@@ -46,3 +46,10 @@ export async function logOut() {
 }
 
 
+/**
+ * 重置密码
+ * @param {*} payload
+ */
+export async function resetPass(payload) {
+  return request.post(Api.AuthReset, payload);
+}

@@ -57,7 +57,8 @@ class App extends Component {
       'pages/ucenter/couponSelect/couponSelect',
       'pages/payResult/payResult',
       'pages/category/category',
-      'pages/coupon/coupon'
+      'pages/coupon/coupon',
+      'pages/auth/reset/reset'
 
     ],
     window: {
