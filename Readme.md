@@ -7,7 +7,11 @@ Taro_Mall是一款多端开源在线商城应用程序，后台是基于litemall
 ------------
 感谢 @程哥提供的认证的小程序平台，正式版本已在审核当中，审核通过，会放上二维码。微信登录和支付现在已经可以用。(请先不要支付，暂不支持退款，后续会弄一个1分钱的商品)
 
-小程序(体验版)
+小程序正式版
+
+<img src='./public/code.jpg' width='150' height='150' style="margin-right: 50px"/>
+
+小程序(体验版，可以体验最新的功能)
 
 <img src='./public/xiaochengxu.jpg' width='150' height='150' style="margin-right: 50px"/>
 
@@ -27,11 +31,11 @@ https://shop.xinmeitop.com/boss
 * `git clone https://github.com/jiechud/taro-mall.git`
 * `npm install || yarn install`
 * `yarn dev:weapp` 启动服务
-*  用微信开发者工具打开
+*  用微信开发者工具打开dist目录
 
 #### 头条小程序
 * `yarn dev:tt`
-* 头条小程序开发工具打开
+* 头条小程序开发工具打开dist目录
 
 #### h5
 * `yarn dev:h5` 启动服务
