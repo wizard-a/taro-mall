@@ -49,6 +49,7 @@ class App extends Component {
 
       'pages/auth/register/register',
       'pages/ucenter/order/order',
+      'pages/ucenter/orderDetail/orderDetail',
       'pages/ucenter/aftersaleList/aftersaleList',
       'pages/ucenter/couponList/couponList',
       'pages/groupon/myGroupon/myGroupon',

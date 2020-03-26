@@ -14,7 +14,8 @@ import './index.less'
 class Index extends PureComponent {
 
   config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '首页',
+    enablePullDownRefresh: true,
   }
 
   componentDidMount() {
