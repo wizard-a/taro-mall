@@ -2,7 +2,17 @@
   box-sizing: border-box;
   background-color: #f4f4f4;
 }
+.bar-container {
+  padding-bottom: 105rpx;
+}
 
+/**自定义组件*/
+.my-tab-bar {
+  padding: 0px 0 6px !important;
+}
+.at-tab-bar__icon {
+  font-size: 20px;
+}
 /*  #ifdef weapp  */
 view, image, text, navigator {
   box-sizing: border-box;
@@ -10,11 +20,6 @@ view, image, text, navigator {
   margin: 0;
 }
 
-view, text {
-  // font-family: PingFangSC-Light, helvetica, 'Heiti SC';
-  font-size: 29px;
-  color: #333;
-}
 /*  #endif  */
 
 
@@ -23,11 +28,5 @@ div, img, span, navigator {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-div, span {
-  // font-family: PingFangSC-Light, helvetica, 'Heiti SC';
-  font-size: 29px;
-  color: #333;
 }
 /*  #endif  */

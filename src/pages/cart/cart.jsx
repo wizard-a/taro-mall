@@ -1,9 +1,9 @@
 import Taro , { Component } from '@tarojs/taro';
-import { View, Text , Button, Image, Input} from '@tarojs/components';
+import { View, Text , Button, Image, Input, Block} from '@tarojs/components';
 import { AtCheckbox } from 'taro-ui';
 import {get as getGlobalData} from '../../global_data';
 import { cartUpdate, cartDelete, cartChecked, getCartListApi } from '../../services/cart';
-
+import { TabBar } from '../../components';
 
 import './index.less';
 
@@ -12,6 +12,7 @@ class Cart extends Component {
    config = {
     navigationBarTitleText: '购物车',
     enablePullDownRefresh: true,
+    usingComponents: {}
   }
 
   state={
@@ -272,76 +273,79 @@ class Cart extends Component {
 
     const {hasLogin, isEditCart, cartGoods, cartTotal, checkedAllStatus} = this.state;
     return (
-      <View className='container'>
-        {
-          !hasLogin ? <View className='no-login'>
-            <View className='c'>
-              <Text className='text'>还没有登录</Text>
-              <Button className='button' style='background-color:#A9A9A9' onClick={this.goLogin}>去登录</Button>
-            </View>
-          </View> : <View class='login'>
-          <View className='service-policy'>
-            <View className='item'>30天无忧退货</View>
-            <View className='item'>48小时快速退款</View>
-            <View className='item'>满88元免邮费</View>
-          </View>
+      <Block>
+        <View className='container'>
           {
-            cartGoods.length <= 0 ? <View className='no-cart'>
+            !hasLogin ? <View className='no-login'>
               <View className='c'>
-                <Text>空空如也~</Text>
-                <Text>去添加点什么吧</Text>
+                <Text className='text'>还没有登录</Text>
+                <Button className='button' style='background-color:#A9A9A9' onClick={this.goLogin}>去登录</Button>
               </View>
-            </View> : <View className='cart-view'>
-              <View className='list'>
-                <View className='group-item'>
-                  <View className='goods'>
-                    {
-                      cartGoods.map((item, index) => {
-                        return <View className={`item ${isEditCart ? 'edit' : ''}`} key='id'>
-                          <AtCheckbox onChange={this.checkedItem} />
-                          {/* <van-checkbox value='{ item.checked }' bind:change='checkedItem' data-item-index='{index}'></van-checkbox> */}
-                          <View className='cart-goods'>
-                            <Image className='img' src={item.picUrl}></Image>
-                            <View className='info'>
-                              <View className='t'>
-                                <Text className='name'>{item.goodsName}</Text>
-                                <Text className='num'>x{item.number}</Text>
-                              </View>
-                              <View className='attr'>{ isEditCart ? '已选择:' : ''}{item.specifications||''}</View>
-                              <View className='b'>
-                                <Text className='price'>￥{item.price}</Text>
-                                <View className='selnum'>
-                                  <View className='cut' onClick={this.cutNumber} data-item-index={index}>-</View>
-                                  <Input value={item.number} className='number' disabled='true' type='number' />
-                                  <View className='add' onClick={this.addNumber} data-item-index={index}>+</View>
+            </View> : <View class='login'>
+            <View className='service-policy'>
+              <View className='item'>30天无忧退货</View>
+              <View className='item'>48小时快速退款</View>
+              <View className='item'>满88元免邮费</View>
+            </View>
+            {
+              cartGoods.length <= 0 ? <View className='no-cart'>
+                <View className='c'>
+                  <Text>空空如也~</Text>
+                  <Text>去添加点什么吧</Text>
+                </View>
+              </View> : <View className='cart-view'>
+                <View className='list'>
+                  <View className='group-item'>
+                    <View className='goods'>
+                      {
+                        cartGoods.map((item, index) => {
+                          return <View className={`item ${isEditCart ? 'edit' : ''}`} key='id'>
+                            <AtCheckbox onChange={this.checkedItem} />
+                            {/* <van-checkbox value='{ item.checked }' bind:change='checkedItem' data-item-index='{index}'></van-checkbox> */}
+                            <View className='cart-goods'>
+                              <Image className='img' src={item.picUrl}></Image>
+                              <View className='info'>
+                                <View className='t'>
+                                  <Text className='name'>{item.goodsName}</Text>
+                                  <Text className='num'>x{item.number}</Text>
+                                </View>
+                                <View className='attr'>{ isEditCart ? '已选择:' : ''}{item.specifications||''}</View>
+                                <View className='b'>
+                                  <Text className='price'>￥{item.price}</Text>
+                                  <View className='selnum'>
+                                    <View className='cut' onClick={this.cutNumber} data-item-index={index}>-</View>
+                                    <Input value={item.number} className='number' disabled='true' type='number' />
+                                    <View className='add' onClick={this.addNumber} data-item-index={index}>+</View>
+                                  </View>
                                 </View>
                               </View>
                             </View>
                           </View>
-                        </View>
-                      })
-                    }
+                        })
+                      }
+                    </View>
+                  </View>
+
+                </View>
+                <View className='cart-bottom'>
+                  {/* <van-checkbox value='{ checkedAllStatus }' bind:change='checkedAll'>全选（{cartTotal.checkedGoodsCount}）</van-checkbox> */}
+                  <View className='total'>{!isEditCart ? '￥'+cartTotal.checkedGoodsAmount : ''}</View>
+                  <View class='action_btn_area'>
+                    <View className={!isEditCart ? 'edit' : 'sure'} onClick={this.editCart}>{!isEditCart ? '编辑' : '完成'}</View>
+
+                    { isEditCart && <View className='delete' onClick={this.deleteCart}>删除({cartTotal.checkedGoodsCount})</View>}
+                    { !isEditCart && <View className='checkout' onClick={this.checkoutOrder}>下单</View>}
                   </View>
                 </View>
-
               </View>
-              <View className='cart-bottom'>
-                {/* <van-checkbox value='{ checkedAllStatus }' bind:change='checkedAll'>全选（{cartTotal.checkedGoodsCount}）</van-checkbox> */}
-                <View className='total'>{!isEditCart ? '￥'+cartTotal.checkedGoodsAmount : ''}</View>
-                <View class='action_btn_area'>
-                  <View className={!isEditCart ? 'edit' : 'sure'} onClick={this.editCart}>{!isEditCart ? '编辑' : '完成'}</View>
+            }
 
-                  { isEditCart && <View className='delete' onClick={this.deleteCart}>删除({cartTotal.checkedGoodsCount})</View>}
-                  { !isEditCart && <View className='checkout' onClick={this.checkoutOrder}>下单</View>}
-                </View>
-              </View>
-            </View>
+          </View>
           }
 
         </View>
-        }
-
-      </View>
+        <TabBar />
+      </Block>
     );
   }
 }

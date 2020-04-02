@@ -4,6 +4,7 @@ import 'taro-ui/dist/style/index.scss';
 import dva from './dva';
 import models from './models';
 import * as user from './utils/user';
+import * as app from './utils/app';
 import {set as setGlobalData, get as getGlobalData} from './global_data';
 
 import Index from './pages/index'
@@ -35,7 +36,11 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
+      'pages/catalog/catalog',
+      'pages/cart/cart',
       'pages/ucenter/index/index',
+      'pages/custom/page/page',
+
       'pages/ucenter/address/address',
       'pages/ucenter/addressAdd/addressAdd',
       'pages/auth/login/login',
@@ -44,8 +49,6 @@ class App extends Component {
       'pages/auth/accountLogin/accountLogin',
       'pages/goods/goods',
       'pages/search/search',
-      'pages/catalog/catalog',
-      'pages/cart/cart',
 
       'pages/auth/register/register',
       'pages/ucenter/order/order',
@@ -69,30 +72,36 @@ class App extends Component {
       navigationBarTextStyle: 'black'
     },
     tabBar: {
+      "custom": true,
       "backgroundColor": "#fafafa",
       "borderStyle": "white",
       "selectedColor": "#AB956D",
       "color": "#666",
       "list": [{
         "pagePath": "pages/index/index",
-        "iconPath": './static/images/home.png',
-        "selectedIconPath": './static/images/home@selected.png',
+        // "iconPath": './static/images/home.png',
+        // "selectedIconPath": './static/images/home@selected.png',
         "text": "首页"
       }, {
         "pagePath": "pages/catalog/catalog",
-        "iconPath": './static/images/category.png',
-        "selectedIconPath": './static/images/category@selected.png',
+        // "iconPath": './static/images/category.png',
+        // "selectedIconPath": './static/images/category@selected.png',
         "text": "分类"
       }, {
         "pagePath": "pages/cart/cart",
-        "iconPath": './static/images/cart.png',
-        "selectedIconPath": './static/images/cart@selected.png',
+        // "iconPath": './static/images/cart.png',
+        // "selectedIconPath": './static/images/cart@selected.png',
         "text": "购物车"
       }, {
         "pagePath": 'pages/ucenter/index/index',
-        "iconPath": './static/images/my.png',
-        "selectedIconPath": './static/images/my@selected.png',
+        // "iconPath": './static/images/my.png',
+        // "selectedIconPath": './static/images/my@selected.png',
         "text": "个人"
+      }, {
+        "pagePath": 'pages/custom/page/page',
+        // "iconPath": './static/images/my.png',
+        // "selectedIconPath": './static/images/my@selected.png',
+        "text": "自定义"
       }]
     },
     subpackages: [{
@@ -111,6 +120,7 @@ class App extends Component {
 
   componentWillMount() {
     this.update();
+    app.updateShopConfig();
   }
 
   update = () => {
