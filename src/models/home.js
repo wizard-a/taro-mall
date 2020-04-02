@@ -29,7 +29,6 @@ export default {
   effects: {
     *init(_, {call, put}) {
       const [nav] = yield [call(getShopNav)];
-      console.log('===nav===', nav);
       yield put({type: 'saveShopNav',  payload: nav})
 
     },
@@ -41,7 +40,7 @@ export default {
     // },
     *getIndex(_, {call, put}) {
       const res = yield call(getIndex);
-      console.log('--home--', res);
+      // console.log('--home--', res);
       yield put({type: 'save', payload: res});
     }
   }
