@@ -1,6 +1,6 @@
 import Taro , { Component } from '@tarojs/taro';
 import { View, Text , Button, ScrollView, Image} from '@tarojs/components';
-import { CouponSelectList } from '../../../services/coupon';
+import { couponSelectList } from '../../../services/coupon';
 import './index.less';
 
 class Index extends Component {
@@ -75,7 +75,7 @@ class Index extends Component {
         duration: 2000
       });
 
-      CouponSelectList({
+      couponSelectList({
         cartId: this.state.cartId,
         grouponRulesId: this.state.grouponRulesId,
       }).then(res => {
