@@ -4,7 +4,7 @@ import { AtCheckbox } from 'taro-ui';
 import * as area from '../../../utils/area';
 import { showErrorToast } from '../../../utils/util';
 import * as check from '../../../utils/check';
-import { saveAddress } from '../../../services/address';
+import { saveAddress, addressDetail } from '../../../services/address';
 
 import './index.less';
 
@@ -65,12 +65,16 @@ class Index extends Component {
 
      }
   }
-  componentWillReceiveProps (nextProps,nextContext) {}
-  componentWillUnmount () {}
-  componentDidShow () {}
-  componentDidHide () {}
-  componentDidCatchError () {}
-  componentDidNotFound () {}
+
+  getAddressDetail() {
+    addressDetail({
+      id: this.state.addressId
+    }).then(res => {
+        this.setState({
+          address: res
+        });
+    })
+  }
 
   bindinputName = (event) => {
     let address = this.state.address;

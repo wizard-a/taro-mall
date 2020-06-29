@@ -28,3 +28,12 @@ export async function deleteAddress(payload) {
 export async function saveAddress(payload) {
   return request.post(Api.AddressSave, payload);
 }
+
+
+
+/**
+ *  报错地址
+ */
+export async function addressDetail(payload) {
+  return request.get(Api.AddressDetail, payload);
+}

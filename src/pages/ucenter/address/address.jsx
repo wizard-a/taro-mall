@@ -4,6 +4,7 @@ import { AtIcon } from 'taro-ui';
 import {getAddressListApi, deleteAddress} from '../../../services/address';
 
 import './index.less';
+import { Empty } from '../../../components';
 
 class Index extends Component {
 
@@ -120,9 +121,7 @@ class Index extends Component {
         }
 
         {
-          addressList.length <= 0 && <View className='empty-view'>
-            <Text className='text'>收货地址还没有~~~</Text>
-          </View>
+          addressList.length <= 0 && <Empty>没有收获地址，请添加</Empty>
         }
 
         <View className='add-address' onClick={this.addressAddOrUpdate} data-address-id='0'>新建</View>

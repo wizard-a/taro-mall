@@ -4,6 +4,7 @@ import 'taro-ui/dist/style/index.scss';
 import dva from './dva';
 import models from './models';
 import * as user from './utils/user';
+import * as app from './utils/app';
 import {set as setGlobalData, get as getGlobalData} from './global_data';
 
 import Index from './pages/index'
@@ -36,6 +37,10 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/ucenter/index/index',
+      'pages/catalog/catalog',
+      'pages/cart/cart',
+      'pages/custom/page/page',
+
       'pages/ucenter/address/address',
       'pages/ucenter/addressAdd/addressAdd',
       'pages/auth/login/login',
@@ -44,8 +49,6 @@ class App extends Component {
       'pages/auth/accountLogin/accountLogin',
       'pages/goods/goods',
       'pages/search/search',
-      'pages/catalog/catalog',
-      'pages/cart/cart',
 
       'pages/auth/register/register',
       'pages/ucenter/order/order',
@@ -111,6 +114,7 @@ class App extends Component {
 
   componentWillMount() {
     this.update();
+    app.updateShopConfig();
   }
 
   update = () => {

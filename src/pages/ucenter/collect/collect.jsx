@@ -3,6 +3,7 @@ import { View , Image} from '@tarojs/components';
 import { collectAddOrDelete, getCollectListApi } from '../../../services/collect';
 
 import './index.less';
+import { Empty } from '../../../components';
 
 class Index extends Component {
 
@@ -114,11 +115,7 @@ class Index extends Component {
     return (
       <View className='container'>
         {
-          collectList.length <= 0 ? <View className='no-collect'>
-            <View className='c'>
-              <text>还没有收藏</text>
-            </View>
-          </View> : <View className='collect-list'>
+          collectList.length <= 0 ? <Empty>还没有收藏</Empty> : <View className='collect-list'>
             {
               collectList && collectList.map((item, index) => {
                 return <View className='item' onClick={this.openGoods} data-index={index} onTouchStart={this.touchStart} onTouchEnd={this.touchEnd} key={item.id}>

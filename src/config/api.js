@@ -1,6 +1,6 @@
 // 以下是业务服务器API地址
 // 局域网测试使用
-// var WxApiRoot = 'http://192.168.1.102:8080/wx/';
+// var WxApiRoot = 'http://localhost:8082/wx/';
 // 云平台部署时使用
 var WxApiRoot = 'https://shop.xinmeitop.com/wx/';
 

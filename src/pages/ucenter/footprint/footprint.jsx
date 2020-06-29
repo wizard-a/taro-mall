@@ -1,7 +1,8 @@
 import Taro , { Component } from '@tarojs/taro';
-import { View, Text , Button, Image} from '@tarojs/components';
+import { View, Image} from '@tarojs/components';
 import { getFootprintListApi, footprintDelete } from '../../../services/footprint';
 import './index.less';
+import { Empty } from '../../../components';
 
 class Index extends Component {
 
@@ -134,11 +135,7 @@ class Index extends Component {
     return (
       <View className='container'>
         {
-          footprintList.length <= 0 && <View className='no-footprint'>
-              <View className='c'>
-                <text>没有浏览足迹</text>
-              </View>
-            </View>
+          footprintList.length <= 0 && <Empty>没有浏览足迹</Empty>
         }
         {
           footprintList.length > 0 && <View className='footprint'>

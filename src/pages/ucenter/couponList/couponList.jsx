@@ -1,9 +1,10 @@
 import Taro , { Component } from '@tarojs/taro';
 import { View, Text , Image, ScrollView, Input} from '@tarojs/components';
-import { AtIcon } from 'taro-ui';
+import { AtIcon, AtTabs, AtTabsPane  } from 'taro-ui';
 
 import { getCouponMyList, couponExchange } from '../../../services/coupon';
 import {showErrorToast} from '../../../utils/util';
+import {Empty} from '../../../components';
 
 import './index.less';
 
@@ -59,10 +60,10 @@ class Index extends Component {
 
   }
 
-  switchTab = (e) => {
+  switchTab = (tab) => {
     this.setState({
       couponList: [],
-      status: e.currentTarget.dataset.index,
+      status: tab,
       page: 1,
       limit: 10,
       count: 0,
@@ -134,75 +135,73 @@ class Index extends Component {
 
   render() {
     const { status, code, showPage, page, couponList, count, size, scrollTop } = this.state;
+    const tabList = [
+      { title: '未使用' },
+      { title: '已使用' },
+      { title: '已过期' }
+    ]
     return (
       <View className='container'>
-
-        <View className='h'>
-          <View className={`item ${ status == 0 ? 'active' : ''}`} onClick={this.switchTab} data-index='0'>
-            <View className='txt'>未使用</View>
-          </View>
-           <View className={`item ${ status == 1 ? 'active' : ''}`} onClick={this.switchTab} data-index='1'>
-            <View className='txt'>已使用</View>
-          </View>
-          <View className={`item ${ status == 2 ? 'active' : ''}`} onClick={this.switchTab} data-index='2'>
-            <View className='txt'>已过期</View>
-          </View>
-        </View>
-
-        <View className='b'>
-          {
-            status == 0 && <View className='coupon-form'>
-              <View className='input-box'>
-                <Input className='coupon-sn' placeholder='请输入优惠码' value={code} onInput={this.bindExchange} />
+        <AtTabs current={status} tabList={tabList} onClick={this.switchTab}>
+          {tabList.map((tab, index) => {
+            return <AtTabsPane key={tab.title} current={status} index={index} >
+              <View className='b'>
                 {
-                  code.length > 0 && <View className='clear-icon'><AtIcon value='close-circle' size='14' color='#666' onClick={this.clearExchange} /></View>
+                  status == 0 && <View className='coupon-form'>
+                    <View className='input-box'>
+                      <Input className='coupon-sn' placeholder='请输入优惠码' value={code} onInput={this.bindExchange} />
+                      {
+                        code.length > 0 && <View className='clear-icon'><AtIcon value='close-circle' size='14' color='#666' onClick={this.clearExchange} /></View>
+                      }
+                    </View>
+                    <View className='add-btn' onClick={this.goExchange}>兑换</View>
+                  </View>
                 }
-              </View>
-              <View className='add-btn' onClick={this.goExchange}>兑换</View>
-            </View>
-          }
-
-          {
-            status == 0 && <View className='help'>
-              <van-icon name='question-o' />
-              使用说明
-            </View>
-          }
-
-
-          <ScrollView className='coupon-list' scrollY scrollTop={scrollTop}>
-
-            {
-              Array.isArray(couponList) && couponList.map((item) => {
-                return <View className={`item ${ status == 0 ? 'active' : ''}`} key={item.id}>
-                  <View className='tag'>{item.tag}</View>
-                  <View className='content'>
-                    <View className='left'>
-                      <View className='discount'>{item.discount}元</View>
-                      <View className='min'> 满{item.min}元使用</View>
-                    </View>
-                    <View className='right'>
-                      <View className='name'>{item.name}</View>
-                      <View className='time'> 有效期：{item.startTime} - {item.endTime}</View>
-                    </View>
+                {
+                  couponList.length === 0 && <Empty>暂无优惠券</Empty>
+                }
+                {
+                  status == 0 && <View className='help'>
+                    {/* <AtIcon value='help' size='16' color='#666' /> */}
+                    使用说明
                   </View>
-                  <View className='condition'>
-                    <Text className='txt'>{item.desc}</Text>
-                    <Image src={item.pic} className='icon'></Image>
-                  </View>
-                </View>
-              })
-            }
+                }
+                <ScrollView className='coupon-list' scrollY scrollTop={scrollTop}>
 
-            {
-              showPage && <View className='page'>
-                <View className={`prev ${ page <= 1 ? 'disabled' : ''}`} onClick={this.prevPage}>上一页</View>
-                <View className={`next ${ (count / size) < page ? 'disabled' : ''}`} onClick={this.nextPage}>下一页</View>
+                  {
+                    Array.isArray(couponList) && couponList.map((item) => {
+                      return <View className={`item ${ status == 0 ? 'active' : ''}`} key={item.id}>
+                        <View className='tag'>{item.tag}</View>
+                        <View className='content'>
+                          <View className='left'>
+                            <View className='discount'>{item.discount}元</View>
+                            <View className='min'> 满{item.min}元使用</View>
+                          </View>
+                          <View className='right'>
+                            <View className='name'>{item.name}</View>
+                            <View className='time'> 有效期：{item.startTime} - {item.endTime}</View>
+                          </View>
+                        </View>
+                        <View className='condition'>
+                          <Text className='txt'>{item.desc}</Text>
+                          <Image src={item.pic} className='icon'></Image>
+                        </View>
+                      </View>
+                    })
+                  }
+
+                  {
+                    showPage && <View className='page'>
+                      <View className={`prev ${ page <= 1 ? 'disabled' : ''}`} onClick={this.prevPage}>上一页</View>
+                      <View className={`next ${ (count / size) < page ? 'disabled' : ''}`} onClick={this.nextPage}>下一页</View>
+                    </View>
+                  }
+
+                </ScrollView>
               </View>
-            }
-
-          </ScrollView>
-        </View>
+            </AtTabsPane>
+          })}
+        </AtTabs>
       </View>
     );
   }
