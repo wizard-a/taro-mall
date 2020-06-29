@@ -1,3 +1,5 @@
+
+
 const config = {
   projectName: 'xiaochengxu-shop',
   date: '2020-2-22',
@@ -10,6 +12,7 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: [
+    '@tarojs/plugin-sass',
     '@tarojs/plugin-less'
   ],
   babel: {
