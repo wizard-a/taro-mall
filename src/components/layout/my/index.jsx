@@ -147,24 +147,9 @@ class My extends Component {
       return <AtList hasBorder={false} key={item}>
         {
           item.map((child, index) => {
-            console.log('child', child);
-            if (child.type === 'bindPhone') {
-              console.log("aaa=aaaa")
-              return <BindPhone>
-                {
-                  child.type === 'bindPhone' ?  <AtListItem
-                    key={child.type}
-                    thumb={child.image}
-                    hasBorder={index !== item.length-1}
-                    title={child.value}
-                    arrow='right'
-                  /> : null
-                }
-
-              </BindPhone>
-            }
-            if (child.type === 'customer') {
-              return <Contact>
+            return child.type === 'bindPhone' ? 
+            <BindPhone>
+              {
                 <AtListItem
                   key={child.type}
                   thumb={child.image}
@@ -172,16 +157,24 @@ class My extends Component {
                   title={child.value}
                   arrow='right'
                 />
-              </Contact>
-            }
-            return <AtListItem
+              }
+            </BindPhone> : child.type === 'customer' ? 
+            <Contact>
+              <AtListItem
+                key={child.type}
+                thumb={child.image}
+                hasBorder={index !== item.length-1}
+                title={child.value}
+                arrow='right'
+              />
+            </Contact> : <AtListItem
               key={child.type}
               thumb={child.image}
               hasBorder={index !== item.length-1}
               title={child.value}
-              onClick={() => this.handlePowerClick(child)}
               arrow='right'
-            />
+              onClick={() => this.handlePowerClick(child)}
+            /> 
           })
         }
     </AtList>
