@@ -12,7 +12,7 @@ class Index extends PureComponent {
       // 拒绝授权
       return;
     }
-    if (app.isLogin()) {
+    if (!app.isLogin()) {
       Taro.showToast({
         title: '绑定失败：请先登录',
         icon: 'none',
@@ -26,7 +26,7 @@ class Index extends PureComponent {
       encryptedData: e.detail.encryptedData
     }).then(() => {
       Taro.showToast({
-        title: '绑定手机号码成功',
+        title: '绑定成功',
         icon: 'success',
         duration: 2000
       });
