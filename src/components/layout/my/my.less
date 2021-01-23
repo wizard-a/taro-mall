@@ -1,0 +1,128 @@
+.split-line {
+  height: 20px;
+}
+.layout-my {
+  // background: rgb(249, 249, 249);
+  .header {
+    position: relative;
+    height: 350px;
+    display: flex;
+    background-size: cover;
+    display: flex;
+    padding: 0 25px;
+    padding-bottom: 60px;
+    .avatar {
+      height: 148px;
+      width: 148px;
+      border-radius: 50%;
+    }
+
+    .info {
+      max-width: 200px;
+      overflow: hidden;
+      font-weight: 700;
+      font-size: 36px;
+      white-space: nowrap;
+      text-align: left;
+      text-overflow: ellipsis;
+    }
+  }
+  .left {
+    align-items: center;
+    .info {
+      margin-left: 25px;
+    }
+  }
+  .center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .info {
+      margin-top: 10px;
+    }
+  }
+  .right {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .vip {
+    width: calc(100% - 50px);
+    height: 70px;
+
+    box-shadow: 0 -2px 8px 0 rgba(0,0,0,.2);
+    background: url(https://img.yzcdn.cn/public_files/2019/01/07/2a995b38e57f128e430d17629da437d9.png);
+    position: absolute;
+    bottom: 0;
+    // left: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // width: 94%;
+    // height: 40px;
+    color: #fff;
+    background-size: cover;
+    border-radius: 8px 8px 0 0;
+    padding: 0 20px;
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 0 25px;
+  }
+
+  /** box**/
+  .box-item {
+
+    background: #fff;
+    border-radius: 14px;
+    padding: 0 20px;
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 28px;
+      height: 80px;
+      border-bottom: 1px solid #ebedf0;
+      .title {
+        border-radius: 14px;
+        color: #333;
+        font-size: 32px;
+        font-weight: 600;
+      }
+      .all-order {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        color: #969799;
+      }
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 0px;
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .img {
+          width: 50px;
+          height: 50px;
+        }
+        .name {
+          font-size: 24px;
+          margin-top: 15px;
+          color: rgba(17,17,17);
+        }
+      }
+    }
+  }
+
+  .power-list {
+    border-radius: 8px;
+  }
+
+}
