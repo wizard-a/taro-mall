@@ -22,7 +22,7 @@ h5
 
 后台系统地址
 
-https://shop.xinmeitop.com/boss
+https://shop.andmedia.cn/boss
 
 
 
