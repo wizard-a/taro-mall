@@ -22,7 +22,7 @@ h5
 
 后台系统地址
 
-https://shop.andmedia.cn/boss
+http://39.97.252.98:8081/
 
 
 
@@ -95,8 +95,8 @@ https://shop.andmedia.cn/boss
 FAQ
 -----------
 1. 账号登录的用户名密码是什么？
+微信联系我 q1454763497 或者关注公众号【前端有话说】，回复【商城账号】
 
-account: user123   password: user123
 
 联系我
 --------------
